@@ -1,0 +1,47 @@
+.wp-block-emrikol-airbnb-embed {
+    margin-bottom: 1.5em;
+}
+
+.wp-block-emrikol-airbnb-embed iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+.wp-block-emrikol-airbnb-embed label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.wp-block-emrikol-airbnb-embed .components-text-control__input {
+    width: 100%;
+}
+
+.wp-block-emrikol-airbnb-embed .components-toggle-control__label {
+    margin-bottom: 0.5em;
+}
+
+.wp-block-emrikol-airbnb-embed .components-toggle-control__label + .components-toggle-control__label {
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+}
+
+
+/* Airbnb Embed block frontend styles */
+
+.airbnb-embed-frame {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.airbnb-embed-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.airbnb-embed-frame a {
+    display: none;
+}

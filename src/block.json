@@ -1,0 +1,65 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "emrikol/airbnb-embed",
+	"version": "0.1.0",
+	"title": "AirBnB Embed",
+	"category": "embed",
+	"icon": "embed-generic",
+	"description": "Embeds AirBnB Rooms",
+	"supports": {
+		"multiple": true,
+		"customClassName": true,
+		"reusable": true
+	},
+	"textdomain": "airbnb-embed",
+	"attributes": {
+		"listingId": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".airbnb-embed-frame",
+			"attribute": "data-id"
+		},
+		"url": {
+			"type": "string",
+			"source": "text",
+			"selector": ".airbnb-embed-frame",
+			"default": ""
+		},
+		"hideCta": {
+			"type": "boolean",
+			"default": false
+		},
+		"hidePrice": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideDescription": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideTitle": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideHost": {
+			"type": "boolean",
+			"default": false
+		},
+		"width": {
+			"type": "string",
+			"default": "100%"
+		},
+		"height": {
+			"type": "string",
+			"default": "600px"
+		},
+		"autoInit": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
