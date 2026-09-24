@@ -14,17 +14,23 @@
  * @package           airbnb-embed
  */
 
+declare(strict_types=1);
+
+namespace Emrikol\AirBnB_Embed;
+
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
  * Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
+ *
+ * @return void
  */
-function emrikol_airbnb_embed_block_init() {
+function emrikol_airbnb_embed_block_init(): void {
 	register_block_type( __DIR__ . '/build' );
 }
-add_action( 'init', 'emrikol_airbnb_embed_block_init' );
+add_action( 'init', __NAMESPACE__ . '\emrikol_airbnb_embed_block_init' );
 
 /**
  * Enqueues the Airbnb Embed Editor script.
@@ -37,4 +43,4 @@ function emrikol_airbnb_embed_enqueue_editor_script(): void {
 
 	wp_enqueue_script( 'airbnb-embed-editor-script', 'https://www.airbnb.com/embeddable/airbnb_jssdk', array(), $version, true );
 }
-add_action( 'enqueue_block_editor_assets', 'emrikol_airbnb_embed_enqueue_editor_script' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\emrikol_airbnb_embed_enqueue_editor_script' );
