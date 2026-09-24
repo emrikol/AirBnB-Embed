@@ -41,6 +41,10 @@ function emrikol_airbnb_embed_enqueue_editor_script(): void {
 	$file_data = get_file_data( __FILE__, array( 'Version' => 'Version' ) );
 	$version   = $file_data['Version'] ?? filemtime( __FILE__ );
 
-	wp_enqueue_script( 'airbnb-embed-editor-script', 'https://www.airbnb.com/embeddable/airbnb_jssdk', array(), $version, true );
+	/*
+	 * A local loader adds the SDK, because Gutenberg's cross-origin isolation
+	 * blocks it as a plain external script. See assets/sdk-loader.js.
+	 */
+	wp_enqueue_script( 'airbnb-embed-editor-script', plugins_url( 'assets/sdk-loader.js', __FILE__ ), array(), $version, true );
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\emrikol_airbnb_embed_enqueue_editor_script' );
